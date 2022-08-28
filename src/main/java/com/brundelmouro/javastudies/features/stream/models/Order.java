@@ -1,5 +1,6 @@
-package com.brundelmouro.javastudies.stream.models;
+package com.brundelmouro.javastudies.features.stream.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -31,6 +32,7 @@ public class Order {
             joinColumns = { @JoinColumn(name = "order_id") },
             inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
+    @ToString.Exclude
     Set<Product> products;
 
 }

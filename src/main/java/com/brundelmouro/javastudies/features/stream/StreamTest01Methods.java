@@ -1,4 +1,4 @@
-package com.brundelmouro.javastudies.stream;
+package com.brundelmouro.javastudies.features.stream;
 
 import java.util.List;
 import java.util.stream.Collectors;

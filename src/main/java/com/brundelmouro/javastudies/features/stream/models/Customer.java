@@ -1,4 +1,4 @@
-package com.brundelmouro.javastudies.stream.models;
+package com.brundelmouro.javastudies.features.stream.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

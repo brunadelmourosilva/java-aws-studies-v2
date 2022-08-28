@@ -1,4 +1,4 @@
-package com.brundelmouro.javastudies.lambda;
+package com.brundelmouro.javastudies.features.lambda;
 
 import java.util.List;
 import java.util.function.Consumer;

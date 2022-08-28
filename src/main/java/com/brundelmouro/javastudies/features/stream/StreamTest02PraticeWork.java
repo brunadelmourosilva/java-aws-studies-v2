@@ -1,6 +1,6 @@
-package com.brundelmouro.javastudies.stream;
+package com.brundelmouro.javastudies.features.stream;
 
-import com.brundelmouro.javastudies.stream.models.Pessoa;
+import com.brundelmouro.javastudies.features.stream.models.Pessoa;
 
 import java.util.HashSet;
 import java.util.Set;
