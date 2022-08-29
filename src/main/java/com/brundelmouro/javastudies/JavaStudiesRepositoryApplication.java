@@ -19,6 +19,9 @@ public class JavaStudiesRepositoryApplication implements CommandLineRunner {
 	@Override
 	public void run(final String... args) throws Exception {
 		//exercise 1
-		exercises.exerciseOne();
+		//exercises.exerciseOne();
+
+		//exercise 2
+		exercises.exerciseTwo();
 	}
 }
