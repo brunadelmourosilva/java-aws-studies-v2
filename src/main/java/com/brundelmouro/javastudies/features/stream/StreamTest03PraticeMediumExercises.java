@@ -55,4 +55,12 @@ public class StreamTest03PraticeMediumExercises {
 
         filtredProdutsOnOrderList.forEach(x -> System.out.println(x.getId()));
     }
+
+    /* Exercise 3 - Obtain a list of product with category = “Toys” and then apply 10% discount */
+    public void exerciseThree() {
+        List<Product> filteredProducts = productRepo.findAll().stream()
+                .filter(product -> product.getCategory().equals("Toys"))
+                .map(product -> product.getPrice() * 0.90).collect(Collectors.toList()); //TODO terminar
+    }
+
 }
