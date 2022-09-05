@@ -60,7 +60,9 @@ public class StreamTest03PraticeMediumExercises {
     public void exerciseThree() {
         List<Product> filteredProducts = productRepo.findAll().stream()
                 .filter(product -> product.getCategory().equals("Toys"))
-                .map(product -> product.getPrice() * 0.90).collect(Collectors.toList()); //TODO terminar
-    }
+                .map(product -> product.setPrice(product.getPrice() * 0.90))
+                .toList();
 
+        filteredProducts.forEach(x -> log.info(x.getName() + " | " + " New price: " + x.getPrice()));
+    }
 }

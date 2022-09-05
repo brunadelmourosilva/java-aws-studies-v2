@@ -24,4 +24,9 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     @ToString.Exclude
     private Set<Order> orders;
+
+    public Product setPrice(final Double price) {
+        this.price = price;
+        return this;
+    }
 }
