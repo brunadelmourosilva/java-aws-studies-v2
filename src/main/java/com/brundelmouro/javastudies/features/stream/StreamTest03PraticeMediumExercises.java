@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -76,5 +77,16 @@ public class StreamTest03PraticeMediumExercises {
                 .flatMap(order -> order.getProducts().stream()) //the order contains, for example, 3. If each order contains 10 products, the final output will be 30(3 x 10)
                 .distinct() //If the flatMap returns repeated products, distinct() method will remove it
                 .forEach(order -> System.out.println(order.getId()));
+    }
+
+    /* Exercise 5 — Get the cheapest products of “Books” category */
+    public void exerciseFive() throws ClassNotFoundException {
+        Product filteredProduct = productRepo.findAll().stream()
+                .filter(product -> product.getCategory().equals("Books"))
+                .sorted(Comparator.comparing(productSorted -> productSorted.getPrice()))
+                .findFirst()
+                .orElseThrow(() -> new ClassNotFoundException());
+
+        System.out.println(filteredProduct.toString());
     }
 }
