@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -64,5 +65,16 @@ public class StreamTest03PraticeMediumExercises {
                 .toList();
 
         filteredProducts.forEach(x -> log.info(x.getName() + " | " + " New price: " + x.getPrice()));
+    }
+
+    /* Exercise 4 — Obtain a list of products ordered by customer of tier 2 between 01-Feb-2021 and 01-Apr-2021 */
+    public void exerciseFour() {
+        orderRepo.findAll().stream()
+                .filter(order -> order.getCustomer().getTier() == 2) //filter customers that contains tier equals 2
+                .filter(order -> order.getOrderDate().compareTo(LocalDate.of(2021, 2, 1)) >= 0)
+                .filter(order -> order.getOrderDate().compareTo(LocalDate.of(2021, 4, 1)) <= 0)
+                .flatMap(order -> order.getProducts().stream()) //the order contains, for example, 3. If each order contains 10 products, the final output will be 30(3 x 10)
+                .distinct() //If the flatMap returns repeated products, distinct() method will remove it
+                .forEach(order -> System.out.println(order.getId()));
     }
 }

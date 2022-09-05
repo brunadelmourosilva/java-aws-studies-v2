@@ -25,6 +25,9 @@ public class JavaStudiesRepositoryApplication implements CommandLineRunner {
 		//exercises.exerciseTwo();
 
 		//exercise 3
-		exercises.exerciseThree();
+		//exercises.exerciseThree();
+
+		//exercise 4
+		//exercises.exerciseFour();
 	}
 }
