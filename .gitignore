@@ -1,6 +1,6 @@
-HELP.md
+lamba-stream/HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!lamba-stream/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
