@@ -2,8 +2,12 @@ package br.com.brunadelmouro.mongooperations;
 
 import br.com.brunadelmouro.mongooperations.domain.dao.BandaDao;
 import br.com.brunadelmouro.mongooperations.domain.dao.IntegranteDao;
+import br.com.brunadelmouro.mongooperations.domain.enums.CampoEnum;
+import br.com.brunadelmouro.mongooperations.domain.enums.SortEnum;
 import br.com.brunadelmouro.mongooperations.domain.models.Banda;
 import br.com.brunadelmouro.mongooperations.domain.models.Integrante;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -64,13 +68,13 @@ public class MongoopearationsApplication implements CommandLineRunner {
         //--------------------------------------------------------
 
         var banda1 = new Banda(
-                "Motley Clue",
+                "Motley Crue",
                 "Rock",
                 1988,
                 Set.of(integrante1, integrante2, integrante3, integrante4));
 
         var banda2 = new Banda(
-                "Guns n' Roses",
+                "Guns n Roses",
                 "Rock",
                 1980,
                 Set.of(integrante5, integrante6, integrante7, integrante8));
@@ -91,13 +95,19 @@ public class MongoopearationsApplication implements CommandLineRunner {
         bandaDao.insertBandOnCollection(banda4);
 
         // ----------------------------------------------------------
+        var gson = new GsonBuilder().setPrettyPrinting().create();
 
-        final List<Banda> result1 = bandaDao.findBandsByRegexBandName("Sem");
-        log.info(result1.toString());
+        var result1 = bandaDao.findBandsByRegexBandName("Sem");
+        log.info(gson.toJson(result1));
 
         log.info("\n------------------------------------\n");
 
-        final List<Banda> result2 = bandaDao.findBandsByRegexBandNameAndMembers("Guns", Set.of(integrante1, integrante8));
-        log.info(result2.toString());
+        var result2 = bandaDao.findBandsByRegexBandNameAndMembers("Guns", Set.of(integrante1, integrante8));
+        log.info(gson.toJson(result2));
+
+        log.info("\n------------------------------------\n");
+
+        var result3 = bandaDao.findBySortFields(CampoEnum.NOME, SortEnum.DESC);
+        log.info(gson.toJson(result3));
     }
 }
