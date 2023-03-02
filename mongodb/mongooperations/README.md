@@ -38,7 +38,7 @@ quero buscar pelo campo **nome**, utilizando o critério de ````regex````.
 Por fim, forneceremos ao método ````find```` do MongoOperations, a **query**, contendo todos os critérios adicionados,
 a **classe java** referente à entidade e por fim, o **nome da collection** onde as buscas serão feitas.
 
-Vale ressaltar que, além do critério de busca ````regex````, a classe **Criteria** agrega outras funções bem interesantes, 
+Vale ressaltar que, além do critério de busca ````regex````, a classe **Criteria** agrega outras funções bem interessantes, 
 como por exemplo:
 - **lte**: filtragem de valores menores ou iguais ao campo fornecido(_less than or equal_)
 - **gte**: filtragem de valores maiores ou iguais ao campo fornecido(_greater than or equal_)
