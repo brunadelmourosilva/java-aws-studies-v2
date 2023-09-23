@@ -3,6 +3,9 @@ package advanced;
 import java.util.Scanner;
 import java.util.function.Function;
 
+/**
+ * https://www.hackerrank.com/challenges/java-lambda-expressions/problem
+ * */
 public class JavaLambdaExpressions {
 
     private static final Scanner SC = new Scanner(System.in);
