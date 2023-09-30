@@ -50,7 +50,7 @@ public class JavaLambdaExpressions {
             };
 
             if(Integer.parseInt(input[0]) == 1) {
-                if(isOdd.apply(Integer.parseInt(input[1]))) {
+                if(Boolean.TRUE.equals(isOdd.apply(Integer.parseInt(input[1])))) {
                     System.out.println("ODD");
                 } else {
                     System.out.println("EVEN");
@@ -58,7 +58,7 @@ public class JavaLambdaExpressions {
             }
 
             if(Integer.parseInt(input[0]) == 2) {
-                if(isPrime.apply(Integer.parseInt(input[1]))) {
+                if(Boolean.TRUE.equals(isPrime.apply(Integer.parseInt(input[1])))) {
                     System.out.println("PRIME");
                 } else {
                     System.out.println("COMPOSITE");
@@ -66,7 +66,7 @@ public class JavaLambdaExpressions {
             }
 
             if(Integer.parseInt(input[0]) == 3) {
-                if(isPalindrome.apply(Integer.parseInt(input[1]))) {
+                if(Boolean.TRUE.equals(isPalindrome.apply(Integer.parseInt(input[1])))) {
                     System.out.println("PALINDROME");
                 } else {
                     System.out.println("NOT PALINDROME");
