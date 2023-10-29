@@ -31,5 +31,3 @@ public class JavaHashSet {
     }
 }
 
-//criar um multimap
-
