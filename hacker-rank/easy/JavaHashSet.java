@@ -15,13 +15,13 @@ public class JavaHashSet {
             pairRight[i] = s.next();
         }
 
-       Set<String> pairs = new HashSet<>();
+        Set<String> pairs = new HashSet<>();
         int pairQuantity = 0;
         for (int i = 0; i < inputQuantity; i++) {
 
             boolean isNewPair = pairs.add(pairLeft[i].concat(" ").concat(pairRight[i]));
 
-            if(isNewPair) {
+            if (isNewPair) {
                 pairQuantity++;
             }
 
