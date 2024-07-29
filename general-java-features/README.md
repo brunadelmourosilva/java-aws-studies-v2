@@ -6,8 +6,6 @@
 - [ ] CompletableFuture.runAsync() and CompletableFuture.allOf()
 
 
----
-
 ## **LEARNED**
 
 #### Solution to operate over a null list using streams
