@@ -1,24 +1,16 @@
 
----
+# **Java - features and studies**
 
-## **Java - features and studies**
-
----
-
-#### **TO STUDY**
-
----
+## **TO STUDY**
 
 - [ ] CompletableFuture.runAsync() and CompletableFuture.allOf()
 
 
 ---
 
-#### **LEARNED**
+## **LEARNED**
 
----
-
-##### Solution to operate over a null list using streams
+#### Solution to operate over a null list using streams
 
 ```java
 public static void main(String[] args) {
@@ -53,7 +45,7 @@ https://www.baeldung.com/java-null-safe-streams-from-collections
 
 ---
 
-##### Become the spring endpoint async
+#### Become the spring endpoint async
 
 https://medium.com/@basecs101/spring-boot-async-annotation-make-api-calls-asynchronous-2024-latest-dcce878d0fe2
 
@@ -63,44 +55,44 @@ exceptions: https://www.baeldung.com/spring-async
 
 ---
 
-##### Use distinctByKey to filter for specific fields, with no repetitions
+#### Use distinctByKey to filter for specific fields, with no repetitions
 
 https://howtodoinjava.com/java8/java-stream-distinct-examples/
 
 ---
 
-##### How to test logs in Junit 5
+#### How to test logs in Junit 5
 
 https://stackoverflow.com/questions/42766017/how-to-test-logging-in-junit5
 
 ---
 
-##### Using AWS SDK 2.x for java
+#### Using AWS SDK 2.x for java
 
 https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code
 
 ---
 
-##### @CreatedDate / @EnableJdbcAuditing
+#### @CreatedDate / @EnableJdbcAuditing
 
 Utilizado para injetar a data corrente da criação de uma entidade
 
 ---
 
-##### Using @ConfigurationProperties instead of @Value
+#### Using @ConfigurationProperties instead of @Value
 
 https://medium.com/@mikael_55667/why-you-should-stop-using-value-annotations-in-spring-and-use-this-instead-2c8a47e5096a
 
 
 ---
 
-##### Extract key/value from raw string
+#### Extract key/value from raw string
 
 TBD
 
 ---
 
-##### Why not use @Autowired?
+#### Why not use @Autowired?
 
 Uma forma recomendada de implementar dependências em um projeto é utilizar o construtor sempre que possível. Existem várias razões para isso:
 
@@ -116,7 +108,7 @@ Para ilustrar esses conceitos, há dois vídeos que mostram cenários práticos:
 
 ---
 
-##### Access each metric in Spring Actuator
+#### Access each metric in Spring Actuator
 
 - Properties: `management.endpoints.web.exposure.include=health,info,metrics,prometheus`
 - Access by metrics: http://localhost:8081/actuator/metrics/metric
