@@ -5,6 +5,12 @@
 
 - [ ] CompletableFuture.runAsync() and CompletableFuture.allOf()
 
+- [ ] Difference between abstract classes and interfaces: https://www.youtube.com/watch?v=uNQSsoL0CdE
+
+- [ ] Difference between
+  - [ ] Noverifymoreinterections And Never
+  - [ ] Runtime Exception and Exception -> which is checked and uncheked
+
 
 ## **LEARNED**
 
@@ -43,7 +49,7 @@ https://www.baeldung.com/java-null-safe-streams-from-collections
 
 ---
 
-#### Become the spring endpoint async
+#### Make Spring endpoint asynchronous
 
 https://medium.com/@basecs101/spring-boot-async-annotation-make-api-calls-asynchronous-2024-latest-dcce878d0fe2
 
