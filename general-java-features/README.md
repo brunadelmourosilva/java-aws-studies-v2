@@ -3,14 +3,30 @@
 
 ## **TO STUDY**
 
+- [ ] SQL QUESTIONS
+  - [ ] LEFT/RIGHT OUTER JOIN
+    https://stackoverflow.com/questions/19267238/what-is-difference-between-inner-join-and-outer-join
+
 - [ ] CompletableFuture.runAsync() and CompletableFuture.allOf()
 
-- [ ] Difference between abstract classes and interfaces: https://www.youtube.com/watch?v=uNQSsoL0CdE
-
 - [ ] Difference between
+  - [ ] Difference between abstract classes and interfaces: https://www.youtube.com/watch?v=uNQSsoL0CdE
   - [ ] Noverifymoreinterections And Never
   - [ ] Runtime Exception and Exception -> which is checked and uncheked
+     
+## TIPS
 
+#### **CALISTHENICS Method - JAVA**
+
+- Use separate methods based on responsibility.
+- AVOID using "else".
+- Don't be frugal with methods.
+- Create a DTO for each contract/endpoint, and avoid reusing the same object for different endpoints.
+- Break down the code for better readability.
+- Create one class per file.
+- Do not abbreviate names.
+- Only generate getters/setters when necessary.
+- https://www.youtube.com/watch?v=FbX51Vk33SQ
 
 ## **LEARNED**
 
@@ -121,3 +137,23 @@ Para ilustrar esses conceitos, há dois vídeos que mostram cenários práticos:
 https://medium.com/javarevisited/unlocking-precision-metrics-in-spring-boot-with-micrometer-a-comprehensive-guide-6d72d6eaaf00 
 
 ---
+
+### Exponetial Backoff - Retry Strategy
+
+https://www.pullrequest.com/blog/retrying-and-exponential-backoff-smart-strategies-for-robust-software/
+
+---
+
+### Spring Scheduled vs Quartz
+
+https://stackoverflow.com/questions/4385719/spring-scheduling-scheduled-vs-quartz
+
+---
+
+### Log level priority
+
+Trace is of the lowest priority and Fatal is having highest priority. Below is the log4j logging level order. 
+
+``` Trace < Debug < Info < Warn < Error < Fatal. ```
+
+When we define logger level, anything having higher priority logs are also getting printed.
