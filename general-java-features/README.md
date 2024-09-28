@@ -13,6 +13,7 @@
   - [ ] Difference between abstract classes and interfaces: https://www.youtube.com/watch?v=uNQSsoL0CdE
   - [ ] Noverifymoreinterections And Never
   - [ ] Runtime Exception and Exception -> which is checked and uncheked
+  - [ ] Strategy x Factory (DP)
      
 ## TIPS
 
