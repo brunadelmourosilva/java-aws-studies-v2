@@ -9,7 +9,7 @@ public class PizzaCalabresa implements Pizza {
 
   @Override
   public void calcularValor(boolean isBordaRecheada) {
-    System.out.println("Calculando valor do pizza de Calabresa...");
+    System.out.println("Calculando valor da pizza de Calabresa...");
 
     System.out.println("Valor total: " + (20.00 + Pizza.calcularBordaRecheada(isBordaRecheada)));
   }
