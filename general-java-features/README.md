@@ -13,7 +13,7 @@
 
 - [ ] DP Strategy -> add enum example
 
-- [ ] DP Factory
+- [x] DP Factory
 
 - [ ] Difference between
   - [ ] Difference between abstract classes and interfaces: https://www.youtube.com/watch?v=uNQSsoL0CdE
