@@ -11,11 +11,14 @@
 
 - [ ] Aspect, reflection, exceptions(runtime e filhas...)
 
+- [ ] DP Strategy -> add enum example
+
+- [ ] DP Factory
+
 - [ ] Difference between
   - [ ] Difference between abstract classes and interfaces: https://www.youtube.com/watch?v=uNQSsoL0CdE
   - [ ] Noverifymoreinterections And Never
   - [ ] Runtime Exception and Exception -> which is checked and uncheked - devdojo
-  - [ ] Strategy x Factory (DP)
      
 ## TIPS
 
