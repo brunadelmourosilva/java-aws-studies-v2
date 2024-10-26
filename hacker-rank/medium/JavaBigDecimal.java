@@ -2,6 +2,7 @@ package medium;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class JavaBigDecimal {
@@ -21,21 +22,28 @@ public class JavaBigDecimal {
 
         //Write your code here
 
-        // convert string to bigdecimal and reorder list s
-        for (int i = 0; i < n; i++) {
+        /*
+          2. Arrays.sort Stability Guarantee
 
-            for (int j = i + 1; j < n; j++) { // 0+1, 1+1, 2+1 ...
+          Java’s Arrays.sort on Object arrays (like String[]) is stable.
+          This means that if the comparator considers two elements "equal" (i.e., returns 0),
+          Arrays.sort keeps them in their original order.
+          */
+        Arrays.sort(s, new Comparator<String>() {
 
-                BigDecimal bdX = new BigDecimal(s[i]);
-                BigDecimal bdY = new BigDecimal(s[j]);
-
-                if (bdX.compareTo(bdY) < 0) {
-                    String temp = s[i]; // storing s[i] value before be replaced
-                    s[i] = s[j];
-                    s[j] = temp;
+            @Override
+            public int compare(String a, String b) {
+                if (a == null || b == null) {
+                    return 0;
                 }
+
+                BigDecimal bdA = new BigDecimal(a);
+                BigDecimal bdB = new BigDecimal(b);
+
+                // Descending order: compare bdB to bdA
+                return bdB.compareTo(bdA);
             }
-        }
+        });
 
         //Output
         for (int i = 0; i < n; i++) {
