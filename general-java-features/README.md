@@ -3,7 +3,7 @@
 
 ## **TO STUDY**
 
-- [ ] Java Buffer
+- [x] Java Buffer
     
 - [ ] SQL QUESTIONS
   - [ ] LEFT/RIGHT OUTER JOIN
