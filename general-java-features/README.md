@@ -3,6 +3,8 @@
 
 ## **TO STUDY**
 
+- [x] Java Buffer
+    
 - [ ] SQL QUESTIONS
   - [ ] LEFT/RIGHT OUTER JOIN
     https://stackoverflow.com/questions/19267238/what-is-difference-between-inner-join-and-outer-join
@@ -11,7 +13,7 @@
 
 - [ ] Aspect, reflection, exceptions(runtime e filhas...)
 
-- [ ] DP Strategy -> add enum example
+- [x] DP Strategy -> add enum example
 
 - [x] DP Factory
 
@@ -163,3 +165,67 @@ Trace is of the lowest priority and Fatal is having highest priority. Below is t
 ``` Trace < Debug < Info < Warn < Error < Fatal. ```
 
 When we define logger level, anything having higher priority logs are also getting printed.
+
+---
+
+### Java Buffer
+
+Buffer is a temporary storage area in memory that holds data being transferred from one place to another. Buffers are commonly used to improve the efficiency of data processing by allowing data to be read or written in larger chunks rather than one byte or character at a time.
+
+**BlockingQueue<T>:**
+
+The BlockingQueue<T> interface in Java is part of the java.util.concurrent package. It represents a thread-safe queue that supports operations that wait for the queue to become non-empty when retrieving an element and wait for space to become available in the queue when storing an element.
+
+This is particularly useful in producer-consumer scenarios where:
+
+- Producer: Produces data (in your case, logs) and adds it to the queue.
+- 
+- Consumer: Consumes the data (processes the logs) from the queue.
+
+**How BlockingQueue<T> Works**
+
+Here's how BlockingQueue<T> can be used as a buffer for logging:
+
+**Thread Safety:**
+
+It provides built-in synchronization, which means multiple threads can safely add or remove logs without corrupting the data.
+
+**Blocking Operations:**
+
+If a producer tries to add a log to a full queue, it will block until space becomes available.
+If a consumer tries to take a log from an empty queue, it will block until a log is available.
+
+**Example Usage:**
+
+```java
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+public class Logger {
+    private final BlockingQueue<String> logQueue = new ArrayBlockingQueue<>(100); // or you can use LinkedBlockingQueue
+    private final Thread loggerThread;
+
+    public Logger() {
+        loggerThread = new Thread(() -> {
+            try {
+                while (true) {
+                    String log = logQueue.take(); // Blocks if the queue is empty
+                    System.out.println(log); // Process the log (e.g., print or write to file)
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+        loggerThread.start();
+    }
+
+    public void log(String message) {
+        try {
+            logQueue.put(message); // Blocks if the queue is full
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
+```
+Diff: LinkedBlockingQueue (Unbounded (or bounded) - better performance) / ArrayBlockingQueue (Fixed capacity)
