@@ -19,7 +19,7 @@ public class UserController {
   @DeleteMapping("/")
   public ResponseEntity<Void> deleteUser(@RequestBody DeletionMessage deletionMessage) {
 
-    UserDeletion userInstance = userDeletionFactory.getInstance(deletionMessage.getType());
+    UserDeletion userInstance = userDeletionFactory.getInstance(deletionMessage.getType().toUpperCase());
 
     userInstance.process(deletionMessage);
 
